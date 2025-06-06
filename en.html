@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Sasha Rizzetto</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .left-column {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 20px;
+            width: 35%;
+            min-height: 100vh;
+        }
+        .right-column {
+            padding: 30px 40px;
+            width: 65%;
+        }
+        .profile-pic-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ecf0f1;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .left-column h2 {
+            color: #1abc9c;
+            border-bottom: 1px solid #1abc9c;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .right-column .name-title {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .right-column h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #1abc9c;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .contact-item, .education-item, .skill-item, .language-item {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+        .education-item .course-description {
+             font-size: 0.85em;
+             margin-top: 3px;
+             margin-left: 5px;
+             font-style: italic;
+             color: #bdc3c7;
+        }
+        .contact-item i {
+            margin-right: 10px;
+            color: #1abc9c;
+            width: 20px;
+            text-align: center;
+        }
+        .job, .project-freelance {
+            margin-bottom: 20px;
+        }
+        .job h3, .project-freelance h3 {
+            font-size: 1.15em;
+            color: #34495e;
+            margin-bottom: 2px;
+        }
+        .job .company-date, .project-freelance .company-date {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        .job ul, .project-freelance ul {
+            padding-left: 18px;
+            margin-top: 5px;
+            margin-bottom: 8px;
+        }
+        .job ul li, .project-freelance ul li {
+            margin-bottom: 4px;
+            font-size: 0.9em;
+        }
+        .job .technologies, .project-freelance .technologies {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 5px;
+        }
+        .job .technologies strong, .project-freelance .technologies strong {
+            color: #2c3e50;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ecf0f1;
+        }
+        .education-item .degree {
+            font-weight: bold;
+        }
+        .education-item .university {
+            font-style: italic;
+        }
+        .education-item .date {
+            font-size: 0.9em;
+            color: #bdc3c7;
+        }
+        .education-item .thesis-grade {
+            font-size: 0.85em;
+            margin-top:5px;
+            font-style: italic;
+        }
+        .skills-category {
+            margin-bottom: 8px;
+        }
+        .skills-category strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #1abc9c;
+            font-size: 0.95em;
+        }
+        .skills-category span {
+            font-size: 0.9em;
+        }
+        .language-item { font-size: 0.9em; }
+        .footer-consent {
+            font-size: 0.75em;
+            color: #7f8c8d;
+            margin-top: 30px;
+            text-align: justify;
+        }
+        .professional-summary {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .project-title-freelance {
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #34495e;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .skills-intro {
+            font-size:0.85em;
+            font-style: italic;
+            color: #ecf0f1;
+            margin-bottom: 10px;
+        }
+        .soft-skills-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.9em;
+        }
+        .soft-skills-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .soft-skills-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #1abc9c;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+        @media print {
+            body {
+                background-color: #fff;
+                font-size: 9.5pt;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            .left-column {
+                width: 32%;
+                background-color: #2c3e50 !important;
+                color: #ecf0f1 !important;
+                min-height: 0;
+                page-break-inside: avoid;
+            }
+            .left-column h2, .left-column .contact-item i, .left-column .skills-category strong, .soft-skills-list li::before {
+                color: #1abc9c !important;
+            }
+            .left-column .date, .left-column .education-item .thesis-grade, .left-column .education-item .course-description {
+                 color: #bdc3c7 !important;
+            }
+            .right-column {
+                width: 68%;
+                padding: 20px;
+            }
+            .right-column .name-title, .right-column h2 {
+                color: #2c3e50 !important;
+            }
+            .right-column h2 {
+                border-bottom: 2px solid #1abc9c !important;
+            }
+            .profile-pic-container { display: none; }
+            .footer-consent { font-size: 7pt; }
+            .professional-summary, .job ul li, .project-freelance ul li { font-size: 0.92em; }
+            .job .technologies, .project-freelance .technologies { font-size: 0.88em; }
+            .skills-intro { color: #555 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="left-column">
+            <div class="profile-pic-container">
+                 <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+
+            <h2>CONTACTS</h2>
+            <div class="contact-item"><i class="fas fa-envelope"></i>sasha.rizzetto@gmail.com</div>
+            <div class="contact-item"><i class="fas fa-phone"></i>+39 3240577962</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i>Rovereto, Italy</div>
+            <div class="contact-item"><i class="fab fa-linkedin"></i>linkedin.com/in/sasha-rizzetto</div>
+
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <div class="degree">Master's Degree in Human-Computer Interaction</div>
+                <div class="university">University of Trento</div>
+                <div class="date">2022 – March 2025</div>
+                <div class="thesis-grade">Thesis: "MusicoNet: User-Centered Research and Redesign for an Integrated Musical Ecosystem". Grade: 110/110.</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Bachelor's Degree in Internet of Things, Big Data & Web</div>
+                <div class="university">University of Udine</div>
+                <div class="date">2018 – March 2022</div>
+                <div class="thesis-grade">Thesis: "Development of an IT system for the Civil Protection group of San Vito al Tagliamento". Grade: 102/110.</div>
+            </div>
+             <div class="education-item">
+                <div class="degree">Entrepreneurial and Managerial Training</div>
+                <div class="university">S.I.S.S.I. 2.0 Project</div>
+                <div class="date">June 2021 – July 2021</div>
+                <div class="thesis-grade">Intensive training on business planning, market strategies, and innovative business management.</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Innovative Financial Instruments for Business Development</div>
+                <div class="university">OSF Foundation FVG</div>
+                <div class="date">January 2021 – May 2021</div>
+                <div class="thesis-grade">In-depth study of crowdfunding, venture capital, and other financial instruments supporting business growth.</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Diploma in Informatics & Telecommunications</div>
+                <div class="university">I.T.S.T. J.F. Kennedy, Pordenone</div>
+                <div class="date">2013 – 2018 (Grade: 87/100)</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Cisco CCNA 1 & IT-Essentials</div>
+                <div class="university">Cisco Networking Academy</div>
+                <div class="date">2015 – 2017</div>
+            </div>
+
+            <h2>TECHNICAL SKILLS</h2>
+            <p class="skills-intro">My experience spans a wide range of technologies. I consider technology a means to achieve goals, and my consolidated work methodology allows me to agilely and successfully approach the learning and application of new technological stacks according to project needs.</p>
+            <div class="skills-category">
+                <strong>Languages:</strong>
+                <span>Python, Java, JavaScript (ES6+), TypeScript, PHP, C#, C++, SQL, HTML5, CSS3, Swift, Bash</span>
+            </div>
+            <div class="skills-category">
+                <strong>Frameworks & Platforms:</strong>
+                <span>React, Angular, Vue.js, Node.js (Express.js, Next.js), Laravel, jQuery, Bootstrap, Expo (React Native), WordPress, PrestaShop</span>
+            </div>
+            <div class="skills-category">
+                <strong>Databases:</strong>
+                <span>PostgreSQL, MySQL, MongoDB, SQLite, SQL Server</span>
+            </div>
+            <div class="skills-category">
+                <strong>Cloud & DevOps:</strong>
+                <span>AWS (EC2, S3, RDS, Lambda), Azure DevOps (CI/CD), Docker, Git, Jenkins, Supabase, Vercel, Sentry</span>
+            </div>
+             <div class="skills-category">
+                <strong>Tools & Methodologies:</strong>
+                <span>Agile, Figma, VS Code, IntelliJ IDEA, User-Centered Design, Prototyping, User Research</span>
+            </div>
+            <div class="skills-category">
+                <strong>Other:</strong>
+                <span>API Design (RESTful), IoT Protocols (MQTT), System Administration (Linux, Windows Server), Networking (Cisco), Gamification Design</span>
+            </div>
+
+            <h2>SOFT SKILLS</h2>
+            <ul class="soft-skills-list">
+                <li>Complex Problem Solving</li>
+                <li>Effective Teamwork & Collaboration</li>
+                <li>Clear & Adaptive Communication</li>
+                <li>Adaptability & Rapid Learning</li>
+                <li>Project Management & Proactivity</li>
+            </ul>
+
+            <h2>LANGUAGES</h2>
+            <div class="language-item">Italian: Native</div>
+            <div class="language-item">English: C1 (Reading/Listening), B2 (Speaking/Writing)</div>
+            <div class="language-item">Spanish: A2 (Reading/Listening), A1 (Speaking)</div>
+
+            <h2>OTHER</h2>
+            <div class="language-item">Driving License: B, B1</div>
+
+        </aside>
+
+        <main class="right-column">
+            <div class="name-title">SASHA RIZZETTO</div>
+
+            <p class="professional-summary">Versatile IT professional with solid experience as a Technology Consultant, Designer (with a focus on HCI and User-Centered Design), and Full-Stack Software Developer. Specialized in creating innovative digital solutions for web, mobile, and IoT, transforming complex ideas into high-performing, intuitive, and user-centric products. My work philosophy is based on adaptability and continuous learning: I have successfully worked with a wide variety of languages and technological stacks, considering technology as a flexible tool serving project objectives. This approach, combined with a consolidated work methodology, allows me to quickly and effectively tackle new technological challenges. Passionate about innovation, with proven ability to manage end-to-end projects, from conception and UX/UI design, to development, deployment, and maintenance, working effectively in multidisciplinary teams and with Agile methodologies. Strongly motivated to contribute to the growth of dynamic realities through the application of cutting-edge technologies and an approach focused on problem-solving and excellence.</p>
+
+            <h2>WORK EXPERIENCE</h2>
+            <div class="job">
+                <h3>TECH CONSULTANT, DESIGNER & SOFTWARE DEVELOPER</h3>
+                <div class="company-date">Freelance | March 2021 – Present</div>
+                <ul>
+                    <li>Strategic consulting and development of custom solutions for businesses, SMEs, and startups, covering the entire product lifecycle: user research, requirements analysis, UX/UI design, prototyping, front-end and back-end development, API integration, cloud deployment, and evolutionary maintenance.</li>
+                    <li>Management of complex projects, coordinating resources and ensuring compliance with deadlines and budgets, with a focus on transparent communication with stakeholders.</li>
+                    <li>Design and implementation of scalable and resilient software architectures, selecting the most suitable technological stack each time.</li>
+                    <li>Systematic integration of HCI methodologies to analyze user needs and usage context, translating them into designs and functionalities that maximize effectiveness and final satisfaction.</li>
+                </ul>
+
+                <div class="project-title-freelance">Key Projects:</div>
+                <div class="project-freelance">
+                    <h4>Global Management Platform (Steel Industry)</h4>
+                    <ul>
+                        <li>Led the design and managed the frontend development of a complete management system for a multinational steel company, to optimize operations in various plants (order management, production, and logistics). Constant interaction with the backend team.</li>
+                        <li>Results: Significant reduction in management times, improvement in operational efficiency and internal communication, and greater visibility into business processes.</li>
+                    </ul>
+                    <div class="technologies"><strong>Technologies:</strong> Angular, JavaScript, SQL, Microsoft Technologies (.NET for backend), Azure DevOps.</div>
+                </div>
+                <div class="project-freelance">
+                    <h4>E-commerce & Startup Growth</h4>
+                    <ul>
+                        <li>Designed and developed various e-commerce platforms for startups, integrating them with payment, logistics, and CRM systems, contributing to their launch and market success.</li>
+                    </ul>
+                    <div class="technologies"><strong>Technologies:</strong> PHP, PrestaShop, WordPress, MySQL/MongoDB, Stripe/PayPal API.</div>
+                </div>
+                <div class="project-freelance">
+                    <h4>Innovative IoT Applications</h4>
+                    <ul>
+                        <li>Developed IoT applications for monitoring smart greenhouses (environmental control, irrigation) and energy storage systems, including in the nautical sector, with mobile-first user interfaces.</li>
+                    </ul>
+                    <div class="technologies"><strong>Technologies:</strong> Python, C++, MQTT, React Native/Expo, Cloud IoT Platforms.</div>
+                </div>
+                 <div class="project-freelance">
+                    <h4>Other Interesting Achievements</h4>
+                    <ul>
+                        <li>Development of an interactive digital catalog for film archives.</li>
+                        <li>Creation of an advanced POS system for events and festivals, with inventory management and reporting.</li>
+                        <li>Development of e-learning platforms and implementation of gamification mechanics to increase user engagement.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="job">
+                <h3>FULL STACK DEVELOPER</h3>
+                <div class="company-date">Lateral Learning srl, Udine | December 2018 – March 2021</div>
+                <ul>
+                    <li>Development and maintenance of the proprietary e-learning platform, working on front-end and back-end modules.</li>
+                    <li>Implementation of a system for managing and delivering SCORM-formatted courses, including the creation of an application for content processing and packaging.</li>
+                    <li>Development of a native iOS mobile app (Swift) with course access and integration of gamification dynamics to enhance engagement and training effectiveness.</li>
+                    <li>Collaboration in Agile teams, participating in code reviews and contributing to architecture design.</li>
+                </ul>
+                <div class="technologies"><strong>Technologies:</strong> Java, PHP, Swift (iOS), MySQL, SCORM, HTML, CSS, Git.</div>
+            </div>
+
+            <div class="job">
+                <h3>DEVELOPER & ICT TECHNICIAN (Internship)</h3>
+                <div class="company-date">Chamber of Commerce Pordenone | June 2017 – September 2017</div>
+                <ul>
+                    <li>Evolutionary maintenance and bug fixing of the internal SMAQ platform (C#), improving its usability and performance.</li>
+                    <li>Provided specialized SW/HW technical support to users and contributed to network infrastructure optimization.</li>
+                    <li>Automated internal processes through scripting and supported content management of the institutional portal.</li>
+                </ul>
+                <div class="technologies"><strong>Technologies:</strong> C#, PHP, HTML, CSS, JavaScript, Active Directory.</div>
+            </div>
+
+            <div class="job">
+                <h3>SYSTEM ADMINISTRATOR (Internship)</h3>
+                <div class="company-date">CAME spa | June 2016 – August 2016 & June 2017 – August 2017 (summer)</div>
+                <ul>
+                    <li>Ensured the operation of corporate servers (Linux, Windows) and the network, implementing proactive monitoring procedures.</li>
+                    <li>Managed domain migration and user permission configuration, providing troubleshooting and technical support.</li>
+                    <li>Administered the internal e-learning platform and supervised backup and disaster recovery procedures.</li>
+                </ul>
+                 <div class="technologies"><strong>Technologies:</strong> Linux, Windows Server, VMWare, Bash Scripting.</div>
+            </div>
+
+            <h2>INTERESTS & ACTIVITIES</h2>
+            <p>Passionate explorer of the intersections between technology, design, and human behavior, with a strong interest in HCI, IoT, and the impact of AI. I cultivate my curiosity through constant study, continuous training, experimenting with new technologies, and delving into psychology and history. I enjoy imagining and designing innovative solutions to everyday problems. I consider travel an essential tool for learning and discovering new cultures.</p>
+            <p>In my free time, I engage in various activities, such as fitness, hiking, cycling, and fishing. I am actively involved in the community as a volunteer for the Civil Protection FVG and an AVIS blood donor.</p>
+
+            <div class="footer-consent">
+                I authorize the processing of my personal data contained in this CV pursuant to Legislative Decree 30 June 2003, n. 196 "Code regarding the protection of personal data" and GDPR (EU Regulation 2016/679) for the purpose of personnel search and selection.
+            </div>
+        </main>
+    </div>
+</body>
+</html>
