@@ -232,6 +232,36 @@
             .job .technologies, .project-freelance .technologies { font-size: 0.88em; }
             .skills-intro { color: #555 !important; }
         }
+
+        /* Styles for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                /* Change the layout from horizontal to vertical */
+                flex-direction: column;
+            }
+
+            .left-column,
+            .right-column {
+                /* Make both columns take up the full width */
+                width: 100%;
+                /* Reset min-height for the left column which is not needed in a vertical layout */
+                min-height: auto;
+                /* Adjust padding for smaller screens */
+                padding: 20px;
+                box-sizing: border-box; /* Ensures padding does not cause overflow */
+            }
+
+            .right-column .name-title {
+                /* Reduce the main title font size */
+                font-size: 2em;
+                text-align: center;
+            }
+
+            .right-column h2 {
+                /* Slightly reduce section title font size */
+                font-size: 1.3em;
+            }
+        }
     </style>
 </head>
 <body>
