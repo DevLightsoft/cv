@@ -229,35 +229,30 @@
             .footer-consent { font-size: 7pt; }
             .professional-summary, .job ul li, .project-freelance ul li { font-size: 0.92em; }
             .job .technologies, .project-freelance .technologies { font-size: 0.88em; }
-            .skills-intro { color: #555 !important; }
+            .page-break { break-after: page; margin-top: 20px !important;}
+            .left-column .page-break + .education-item,
+            .left-column .page-break + h2 {
+                margin-top: 20px !important;
+            }
         }
 
-        /* Styles for Mobile */
         @media (max-width: 768px) {
             .container {
-                /* Change the layout from horizontal to vertical */
                 flex-direction: column;
             }
 
             .left-column,
             .right-column {
-                /* Make both columns take up the full width */
                 width: 100%;
-                /* Reset min-height for the left column which is not needed in a vertical layout */
-                min-height: auto;
-                /* Adjust padding for smaller screens */
                 padding: 20px;
-                box-sizing: border-box; /* Ensures padding does not cause overflow */
             }
 
             .right-column .name-title {
-                /* Reduce the main title font size */
                 font-size: 2em;
                 text-align: center;
             }
 
             .right-column h2 {
-                /* Slightly reduce section title font size */
                 font-size: 1.3em;
             }
         }
@@ -306,6 +301,7 @@
                 <div class="university">I.T.S.T. J.F. Kennedy, Pordenone</div>
                 <div class="date">2013 – 2018 (Grade: 87/100)</div>
             </div>
+            <div class="page-break"></div>
             <div class="education-item">
                 <div class="degree">Cisco CCNA 1 & IT-Essentials</div>
                 <div class="university">Cisco Networking Academy</div>
@@ -347,6 +343,8 @@
                 <li>Adaptability & Rapid Learning</li>
                 <li>Project Management & Proactivity</li>
             </ul>
+
+            <div class="page-break"></div>
 
             <h2>LANGUAGES</h2>
             <div class="language-item">Italian: Native</div>
@@ -390,6 +388,7 @@
                     </ul>
                     <div class="technologies"><strong>Technologies:</strong> PHP, PrestaShop, WordPress, MySQL/MongoDB, Stripe/PayPal API.</div>
                 </div>
+                <div class="page-break"></div>
                 <div class="project-freelance">
                     <h4>Innovative IoT Applications</h4>
                     <ul>
@@ -440,6 +439,8 @@
                 </ul>
                  <div class="technologies"><strong>Technologies:</strong> Linux, Windows Server, VMWare, Bash Scripting.</div>
             </div>
+
+            <div class="page-break"></div>
 
             <h2>INTERESTS & ACTIVITIES</h2>
             <p>Passionate explorer of the intersections between technology, design, and human behavior, with a strong interest in HCI, IoT, and the impact of AI. I cultivate my curiosity through constant study, continuous training, experimenting with new technologies, and delving into psychology and history. I enjoy imagining and designing innovative solutions to everyday problems. I consider travel an essential tool for learning and discovering new cultures.</p>
